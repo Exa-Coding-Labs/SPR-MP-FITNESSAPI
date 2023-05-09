@@ -1,7 +1,7 @@
 package Lab.Service;
 
-import Lab.FitnessApplication;
-import Lab.Model.Plan;
+import Lab.Application;
+import Lab.Model.Gym;
 import Lab.Model.Workout;
 import Lab.Repository.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class WorkoutService {
     @Autowired
     public WorkoutService(WorkoutRepository workoutRepository){
         this.workoutRepository = workoutRepository;
-        FitnessApplication.log.info("WorkoutService: Autowired the WorkoutService class - ready to go");
+        Application.log.info("WorkoutService: Autowired the WorkoutService class - ready to go");
     }
     /**
      * Use the findAll method, which is provided by all Spring Data JPARepositories, to get all workouts.
@@ -28,7 +28,7 @@ public class WorkoutService {
      */
     public List<Workout> getAllWorkout(){
         List<Workout> workoutList = workoutRepository.findAll();
-        FitnessApplication.log.info("WorkoutService: returning all workouts: "+workoutList);
+        Application.log.info("WorkoutService: returning all workouts: "+workoutList);
         return workoutList;
     }
     /**
@@ -38,7 +38,7 @@ public class WorkoutService {
      */
     public Workout addWorkout(Workout workout){
         Workout persistedWorkout = workoutRepository.save(workout);
-        FitnessApplication.log.info("WorkoutService: saving a workout: "+workout);
+        Application.log.info("WorkoutService: saving a workout: "+workout);
         return persistedWorkout;
     }
     /**
@@ -51,21 +51,8 @@ public class WorkoutService {
     public Workout getWorkoutById(long id){
         Optional<Workout> workoutOptional = workoutRepository.findById(id);
         Workout workout = workoutOptional.get();
-        FitnessApplication.log.info("WorkoutService: Getting workout by ID: "+id+", "+workout);
+        Application.log.info("WorkoutService: Getting workout by ID: "+id+", "+workout);
         return workoutOptional.get();
-    }
-    /**
-     * Use the workout entity to retrieve the plans of a workout. Because Workout is a JPA entity managed by Spring Data,
-     * using the getter method to retrieve a Workout's plans will automatically retrieve associated Plan entities.
-     *
-     * @param id the id of a Workout entity
-     * @return all Plan entities associated with the Workout entity
-     */
-    public List<Plan> getWorkoutPlans(long id){
-        Workout workout = getWorkoutById(id);
-        List<Plan> plans = workout.getPlans();
-        FitnessApplication.log.info("WorkoutService: Getting plans of workout id: "+id+", "+plans);
-        return plans;
     }
     /**
      * Use the remove method, which is provided by all Spring Data JPARepositories, to delete an entity.
@@ -78,7 +65,7 @@ public class WorkoutService {
         Optional<Workout> workoutOptional = workoutRepository.findById(id);
         Workout workout = workoutOptional.get();
         workoutRepository.delete(workout);
-        FitnessApplication.log.info("WorkoutService: deleting workout of ID: "+id+" which was: "+workout);
+        Application.log.info("WorkoutService: deleting workout of ID: "+id+" which was: "+workout);
         return workout;
     }
     /**
@@ -94,7 +81,7 @@ public class WorkoutService {
         Workout workout = workoutOptional.get();
         workout.setTitle(newWorkout.getTitle());
         workoutRepository.save(workout);
-        FitnessApplication.log.info("Updated workout of ID: "+id+", which is now: "+workout);
+        Application.log.info("Updated workout of ID: "+id+", which is now: "+workout);
         return workout;
     }
 }

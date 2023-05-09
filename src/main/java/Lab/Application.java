@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The @SpringBootApplication annotation enables automatic configuration of a Spring App.
  */
 @SpringBootApplication
-public class FitnessApplication {
+public class Application {
 	/**
 	 * Logger setup
 	 */
@@ -20,7 +20,7 @@ public class FitnessApplication {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(FitnessApplication.class);
+		SpringApplication.run(Application.class);
 	}
 
 }

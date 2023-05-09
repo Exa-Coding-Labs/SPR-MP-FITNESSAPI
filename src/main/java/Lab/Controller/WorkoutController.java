@@ -1,6 +1,6 @@
 package Lab.Controller;
 
-import Lab.Model.Plan;
+import Lab.Model.Gym;
 import Lab.Model.Workout;
 import Lab.Service.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,7 +109,7 @@ public class WorkoutController {
      *  }]
      */
     @GetMapping("workout/{id}/plan")
-    public List<Plan> getWorkoutPlans(@PathVariable long id){
+    public List<Gym> getWorkoutPlans(@PathVariable long id){
         return workoutService.getWorkoutPlans(id);
     }
     /**

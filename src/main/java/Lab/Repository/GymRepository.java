@@ -1,6 +1,6 @@
 package Lab.Repository;
 
-import Lab.Model.Plan;
+import Lab.Model.Gym;
 import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Extending JPARepository<Entity class, ID datatype> grants this class the functionality of a JPARepository:
@@ -18,5 +18,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * It is already complete. All the functionality needed to complete the Service classes is *already* provided by
  * default!
  */
-public interface PlanRepository extends JpaRepository<Plan, Long> {
+public interface GymRepository extends JpaRepository<Gym, Long> {
 }
