@@ -16,7 +16,8 @@ public class Application {
 	public static Logger log = LogManager.getLogger();
 
 	/**
-	 * SpringApplication.run will set up the Spring ArtApplication Context for us and start up all controllers
+	 * Automatically configure & run the Spring ArtApplication Context, start Controllers.
+	 * You can manually test this API using an API testing tool (thunder client, postman, curl.)
 	 * @param args
 	 */
 	public static void main(String[] args) {

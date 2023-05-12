@@ -97,22 +97,6 @@ public class WorkoutController {
         return workoutService.getWorkoutById(id);
     }
     /**
-     * Endpoint on GET localhost:8080/workout/{id}/plan should respond with a JSON of the plans of a workout.
-     * For instance, GET localhost:8080/workout/1/plan should respond with
-     * [{
-     *      "planId":1,
-     *      "numberOfReps":1
-     *  },
-     *  {
-     *      "planId":1,
-     *      "numberOfReps":4
-     *  }]
-     */
-    @GetMapping("workout/{id}/plan")
-    public List<Gym> getWorkoutPlans(@PathVariable long id){
-        return workoutService.getWorkoutPlans(id);
-    }
-    /**
      * Endpoint on DELETE localhost:8080/workout/{id} should delete the workout and respond with the deleted workout.
      * For instance, DELETE localhost:8080/workout/1 should delete the workout and respond with
      * {

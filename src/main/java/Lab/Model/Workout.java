@@ -37,5 +37,4 @@ public class Workout {
      */
     @Column
     private String title;
-
 }
