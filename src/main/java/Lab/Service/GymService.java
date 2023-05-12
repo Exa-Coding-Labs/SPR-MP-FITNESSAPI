@@ -23,7 +23,7 @@ public class GymService {
         this.workoutRepository = workoutRepository;
     }
     /**
-     * TODO: Persist a new gym and return the persisted gym
+     * TODO: persist a new gym and return the persisted gym
      * @param gym transient gym entity
      * @return the persisted gym entity
      */
@@ -42,12 +42,6 @@ public class GymService {
      * @return the persisted gym entity of a specific id
      */
     public Gym getgymById(long id){
-        return null;
-    }
-    /**
-     * TODO: return the workout entity associated with a certain gym
-     */
-    public Workout getWorkoutOfgym(long id){
         return null;
     }
     /**
